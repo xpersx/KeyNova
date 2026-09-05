@@ -75,7 +75,7 @@ async function submitReview(){
         const response=await fetch(REVIEWS_API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({rating:selectedRating,text})});
         if(!response.ok)throw new Error("No se pudo publicar la reseña.");
         input.value="";selectRating(5);await renderReviews();showNotification("⭐ Reseña publicada correctamente.");
-    }catch(error){console.error(error);showNotification("No se pudo publicar la reseña. Comprueba que Cloudflare esté conectado.");}
+    }catch(error){console.error(error);showNotification("No se pudo publicar la reseña. Comprueba la conexión del servicio.");}
     finally{if(button)button.disabled=false;}
 }
 async function renderReviews(){
@@ -86,7 +86,11 @@ async function renderReviews(){
         if(!Array.isArray(reviews)||reviews.length===0){container.innerHTML=`<div class="review"><div class="review-stars">★★★★★</div><p>Todavía no hay reseñas. Sé la primera persona en compartir su experiencia.</p><small>👤 Cliente anónimo</small></div>`;updateRatingStats([]);return;}
         container.innerHTML=reviews.map(review=>{const rating=Math.max(1,Math.min(5,Number(review.rating))),stars="★".repeat(rating)+"☆".repeat(5-rating),date=review.created_at?new Date(review.created_at).toLocaleDateString("es-EC"):"";return `<article class="review"><div class="review-stars">${stars}</div><p>${escapeHTML(review.text)}</p><small>👤 Cliente anónimo${date?` · ${escapeHTML(date)}`:""}</small></article>`;}).join("");
         updateRatingStats(reviews);
-    }catch(error){console.error(error);container.innerHTML=`<div class="review"><div class="review-stars">★</div><p>Las reseñas se cargarán cuando la API de Cloudflare esté conectada.</p><small>Servicio de reseñas</small></div>`;updateRatingStats([]);}
+    }catch(error){
+        console.error(error);
+        container.innerHTML="";
+        updateRatingStats([]);
+    }
 }
 function updateRatingStats(reviews){
     const count=reviews.length,countElement=document.getElementById("reviewCount"),averageElement=document.getElementById("averageRating");if(!countElement||!averageElement)return;
@@ -96,11 +100,17 @@ function updateRatingStats(reviews){
     for(let rating=1;rating<=5;rating++){const amount=reviews.filter(review=>Number(review.rating)===rating).length,bar=document.getElementById(`bar${rating}`);if(bar)bar.style.width=`${amount/count*100}%`;}
 }
 
+/* ================= LOGO KEYNOVA ================= */
+function renderKeyNovaLogo(){
+    const svg=`<svg viewBox="0 0 64 64" aria-label="KeyNova" role="img" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="knLogoGradient" x1="8" y1="8" x2="56" y2="56"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs><rect x="4" y="4" width="56" height="56" rx="16" fill="#0b1422" stroke="rgba(96,165,250,.35)"/><path d="M19 17v30M19 32l22-15M19 32l22 15" fill="none" stroke="url(#knLogoGradient)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M44 18v28" stroke="#dbeafe" stroke-width="5" stroke-linecap="round" opacity=".9"/></svg>`;
+    document.querySelectorAll(".logo-icon").forEach(el=>{el.innerHTML=svg;el.classList.add("kn-logo-modern");});
+}
+
 function showNotification(message){
     document.querySelector(".toast-notification")?.remove();const toast=document.createElement("div");toast.className="toast-notification";toast.textContent=message;
     Object.assign(toast.style,{position:"fixed",bottom:"25px",right:"25px",zIndex:"9999",padding:"13px 18px",background:"#111c2d",border:"1px solid rgba(96,165,250,.25)",color:"white",borderRadius:"11px",fontSize:"11px",fontWeight:"700",boxShadow:"0 15px 40px rgba(0,0,0,.35)",animation:"toastIn .25s ease"});document.body.appendChild(toast);
     setTimeout(()=>{toast.style.opacity="0";toast.style.transform="translateY(10px)";toast.style.transition=".25s";setTimeout(()=>toast.remove(),250);},2500);
 }
-const toastStyle=document.createElement("style");toastStyle.textContent=`@keyframes toastIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}`;document.head.appendChild(toastStyle);
+const toastStyle=document.createElement("style");toastStyle.textContent=`@keyframes toastIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.kn-logo-modern{display:grid!important;place-items:center!important}.kn-logo-modern svg{width:100%;height:100%;display:block}.kn-logo-modern:after{display:none!important}`;document.head.appendChild(toastStyle);
 document.addEventListener("keydown",event=>{if(event.key==="Escape"){closeCart();closeCheckout();}});
-document.addEventListener("DOMContentLoaded",()=>{updateCart();selectRating(5);renderReviews();});
+document.addEventListener("DOMContentLoaded",()=>{updateCart();selectRating(5);renderKeyNovaLogo();renderReviews();});
