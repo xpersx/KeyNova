@@ -1,0 +1,514 @@
+/* ============================================================
+   KEYNOVA — ESTILOS DE MEJORAS
+   Todos los estilos están aislados con prefijo kn- para no
+   romper el diseño original de style.css.
+============================================================ */
+
+/* ================= CÓMO FUNCIONA ================= */
+.kn-how-section {
+    padding: 95px 8%;
+    background: linear-gradient(180deg, rgba(9,16,29,.25), rgba(8,13,24,.7));
+    border-top: 1px solid rgba(148,163,184,.08);
+    border-bottom: 1px solid rgba(148,163,184,.08);
+}
+
+.kn-how-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1250px;
+    margin: 42px auto 0;
+}
+
+.kn-how-card {
+    position: relative;
+    min-height: 245px;
+    padding: 26px;
+    background: linear-gradient(145deg, #0d1727, #0a1220);
+    border: 1px solid rgba(148,163,184,.12);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: .25s ease;
+}
+
+.kn-how-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(96,165,250,.28);
+    box-shadow: 0 20px 55px rgba(0,0,0,.22);
+}
+
+.kn-step {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    font-size: 35px;
+    font-weight: 900;
+    color: rgba(96,165,250,.08);
+}
+
+.kn-how-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: rgba(37,99,235,.1);
+    border: 1px solid rgba(96,165,250,.12);
+    margin-bottom: 20px;
+    font-size: 21px;
+}
+
+.kn-how-card h3 {
+    margin-bottom: 9px;
+    font-size: 16px;
+}
+
+.kn-how-card p {
+    color: #78869a;
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+.kn-how-card p strong {
+    color: #cbd5e1;
+}
+
+.kn-service-summary {
+    max-width: 1250px;
+    margin: 20px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.kn-service-summary > div {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 10px;
+    align-items: center;
+    padding: 16px 18px;
+    background: #0b1320;
+    border: 1px solid rgba(148,163,184,.1);
+    border-radius: 14px;
+}
+
+.kn-service-summary > div > span {
+    grid-row: 1 / 3;
+    font-size: 20px;
+}
+
+.kn-service-summary small {
+    color: #66758a;
+    font-size: 9px;
+}
+
+.kn-service-summary strong {
+    font-size: 11px;
+    color: #dbeafe;
+}
+
+.kn-privacy-note {
+    max-width: 1250px;
+    margin: 16px auto 0;
+    padding: 18px 20px;
+    border: 1px solid rgba(34,197,94,.14);
+    background: rgba(34,197,94,.05);
+    border-radius: 14px;
+}
+
+.kn-privacy-note strong {
+    color: #bbf7d0;
+    font-size: 12px;
+}
+
+.kn-privacy-note p {
+    margin-top: 6px;
+    color: #748397;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* ================= CHECKOUT ================= */
+.kn-payment-notice {
+    margin: 14px 0;
+    padding: 15px;
+    display: grid;
+    gap: 4px;
+    border-radius: 13px;
+    background: rgba(37,99,235,.08);
+    border: 1px solid rgba(96,165,250,.16);
+}
+
+.kn-payment-notice strong { font-size: 12px; }
+.kn-payment-notice span { color: #cbd5e1; font-size: 11px; }
+.kn-payment-notice small { color: #6f7f94; font-size: 9px; }
+
+/* ================= ADMIN ================= */
+.kn-admin-modal {
+    width: min(1060px, calc(100vw - 28px)) !important;
+    max-width: 1060px !important;
+    max-height: 91vh;
+    overflow: auto;
+    background: #08111f !important;
+    border: 1px solid rgba(96,165,250,.16) !important;
+    box-shadow: 0 30px 100px rgba(0,0,0,.55) !important;
+}
+
+.kn-admin-login {
+    max-width: 430px;
+    margin: auto;
+    padding: 30px 20px 18px;
+    text-align: center;
+}
+
+.kn-admin-login[hidden],
+.kn-admin-dashboard[hidden] { display: none !important; }
+
+.kn-admin-logo {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 16px;
+    display: grid;
+    place-items: center;
+    border-radius: 17px;
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    color: white;
+    font-size: 26px;
+    font-weight: 900;
+    box-shadow: 0 15px 40px rgba(37,99,235,.25);
+}
+
+.kn-admin-kicker {
+    color: #60a5fa;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.kn-admin-login h2,
+.kn-admin-header h2 {
+    margin: 7px 0 5px;
+}
+
+.kn-admin-login p,
+.kn-admin-header p {
+    color: #718096;
+    font-size: 11px;
+    margin-bottom: 20px;
+}
+
+.kn-admin-login label,
+.kn-form-grid label,
+.kn-price-row label {
+    display: block;
+    text-align: left;
+    color: #95a3b8;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.kn-admin-login input,
+.kn-form-grid input,
+.kn-form-grid textarea,
+.kn-price-row input {
+    width: 100%;
+    margin-top: 7px;
+    padding: 12px 13px;
+    color: #e5e7eb;
+    background: #0d1828;
+    border: 1px solid #1e3047;
+    border-radius: 10px;
+    outline: none;
+}
+
+.kn-admin-login input:focus,
+.kn-form-grid input:focus,
+.kn-form-grid textarea:focus,
+.kn-price-row input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59,130,246,.1);
+}
+
+.kn-admin-login label + input,
+.kn-admin-login input + label { margin-top: 10px; }
+
+.kn-admin-primary,
+.kn-admin-logout,
+.kn-session-row button,
+.kn-maintenance-grid button {
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+}
+
+.kn-admin-primary {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-size: 11px;
+    font-weight: 900;
+    transition: .2s;
+}
+
+.kn-admin-primary:hover { background: #3b82f6; transform: translateY(-1px); }
+.kn-admin-primary.small { width: auto; margin: 0; }
+
+.kn-admin-login > small {
+    display: block;
+    margin-top: 14px;
+    color: #5f6e83;
+    font-size: 9px;
+    line-height: 1.55;
+}
+
+.kn-admin-login code { color: #93c5fd; }
+
+.kn-admin-dashboard { padding: 12px 6px 4px; }
+
+.kn-admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 4px 6px 18px;
+}
+
+.kn-admin-header p { margin-bottom: 0; }
+
+.kn-admin-logout {
+    padding: 9px 12px;
+    border-radius: 9px;
+    color: #fca5a5;
+    background: rgba(239,68,68,.08);
+    border: 1px solid rgba(239,68,68,.15);
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.kn-admin-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.kn-admin-stats > div {
+    padding: 16px;
+    border-radius: 14px;
+    background: #0c1726;
+    border: 1px solid #182a40;
+}
+
+.kn-admin-stats span { font-size: 17px; }
+.kn-admin-stats small { display: block; margin-top: 7px; color: #66758a; font-size: 9px; }
+.kn-admin-stats strong { display: block; margin-top: 3px; font-size: 24px; }
+
+.kn-admin-tabs {
+    display: flex;
+    gap: 6px;
+    padding: 6px;
+    margin-bottom: 17px;
+    overflow-x: auto;
+    border-radius: 12px;
+    background: #0b1523;
+    border: 1px solid #192a40;
+}
+
+.kn-admin-tabs button {
+    padding: 9px 12px;
+    flex: 1;
+    min-width: max-content;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #718096;
+    font-size: 10px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.kn-admin-tabs button.active { color: white; background: #1f5fd2; }
+
+.kn-admin-tab { display: none; }
+.kn-admin-tab.active { display: block; }
+
+.kn-admin-section-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 13px;
+}
+
+.kn-admin-section-head h3 { font-size: 15px; margin-bottom: 4px; }
+.kn-admin-section-head p { color: #66758a; font-size: 9px; }
+
+.kn-price-editor { display: grid; gap: 9px; }
+
+.kn-price-row {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 95px;
+    gap: 11px;
+    align-items: end;
+    padding: 14px;
+    border-radius: 13px;
+    background: #0c1726;
+    border: 1px solid #192a40;
+}
+
+.kn-price-row > div strong,
+.kn-price-row > div small { display: block; }
+.kn-price-row > div small { color: #66758a; margin-top: 4px; font-size: 9px; }
+
+.kn-visible-check {
+    min-height: 39px;
+    display: flex !important;
+    align-items: center;
+    gap: 7px;
+}
+.kn-visible-check input { width: auto; margin: 0; accent-color: #2563eb; }
+
+.kn-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.kn-form-grid .full { grid-column: 1 / -1; }
+.kn-form-grid textarea { min-height: 92px; resize: vertical; }
+
+.kn-fixed-info {
+    margin-top: 13px;
+    padding: 14px;
+    display: grid;
+    gap: 4px;
+    border-radius: 12px;
+    background: rgba(37,99,235,.07);
+    border: 1px solid rgba(96,165,250,.13);
+}
+.kn-fixed-info strong { font-size: 11px; }
+.kn-fixed-info span { color: #cbd5e1; font-size: 10px; }
+.kn-fixed-info small { color: #66758a; font-size: 9px; }
+
+.kn-session-warning {
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    border-radius: 11px;
+    background: rgba(251,191,36,.05);
+    border: 1px solid rgba(251,191,36,.12);
+    color: #a89667;
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+.kn-session-list,
+.kn-history-list { display: grid; gap: 8px; }
+
+.kn-session-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 13px;
+    border-radius: 12px;
+    background: #0c1726;
+    border: 1px solid #192a40;
+}
+
+.kn-session-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 4px rgba(34,197,94,.08);
+}
+
+.kn-session-row > div { flex: 1; }
+.kn-session-row strong, .kn-session-row small { display: block; }
+.kn-session-row small { margin-top: 3px; color: #607087; font-size: 8px; }
+.kn-session-row em { color: #60a5fa; font-size: 9px; font-style: normal; }
+.kn-session-row button {
+    padding: 7px 9px;
+    border-radius: 8px;
+    background: rgba(239,68,68,.08);
+    border: 1px solid rgba(239,68,68,.13);
+    color: #fca5a5;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.kn-live-pill {
+    padding: 5px 8px;
+    border-radius: 20px;
+    background: rgba(34,197,94,.08);
+    color: #86efac;
+    font-size: 8px;
+    font-weight: 900;
+}
+
+.kn-history-title { margin: 18px 0 9px; font-size: 12px; }
+.kn-history-list > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #0b1523;
+    border: 1px solid #17273b;
+}
+.kn-history-list strong { font-size: 10px; }
+.kn-history-list span { color: #64748b; font-size: 9px; }
+
+.kn-empty {
+    padding: 24px;
+    text-align: center;
+    border: 1px dashed #23364d;
+    border-radius: 12px;
+    color: #607087;
+    font-size: 10px;
+}
+
+.kn-maintenance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.kn-maintenance-grid button {
+    padding: 18px;
+    text-align: left;
+    border-radius: 13px;
+    background: #0c1726;
+    border: 1px solid #192a40;
+    color: white;
+}
+
+.kn-maintenance-grid button:hover { border-color: rgba(96,165,250,.25); }
+.kn-maintenance-grid strong, .kn-maintenance-grid span { display: block; }
+.kn-maintenance-grid strong { font-size: 11px; }
+.kn-maintenance-grid span { margin-top: 5px; color: #66758a; font-size: 9px; }
+
+.kn-shake { animation: knShake .35s ease; }
+@keyframes knShake { 25%{transform:translateX(-5px)} 50%{transform:translateX(5px)} 75%{transform:translateX(-3px)} }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1000px) {
+    .kn-how-grid { grid-template-columns: repeat(2, 1fr); }
+    .kn-service-summary { grid-template-columns: repeat(2, 1fr); }
+    .kn-price-row { grid-template-columns: 1fr 1fr; }
+    .kn-price-row > div { grid-column: 1 / -1; }
+    .kn-admin-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 650px) {
+    .kn-how-section { padding: 70px 6%; }
+    .kn-how-grid, .kn-service-summary { grid-template-columns: 1fr; }
+    .kn-how-card { min-height: auto; }
+    .kn-admin-header, .kn-admin-section-head { flex-direction: column; align-items: stretch; }
+    .kn-admin-primary.small { width: 100%; }
+    .kn-form-grid, .kn-price-row, .kn-maintenance-grid { grid-template-columns: 1fr; }
+    .kn-form-grid .full, .kn-price-row > div { grid-column: auto; }
+    .kn-session-row { flex-wrap: wrap; }
+    .kn-session-row > div { min-width: 170px; }
+}
