@@ -1,15 +1,9 @@
 /* ============================================================
-   KEYNOVA — MEJORAS DEL SITIO
+   KEYNOVA
    ------------------------------------------------------------
-   Este archivo añade las funciones avanzadas sin modificar
-   el diseño principal de style.css.
-
-   🔐 CONTRASEÑA DEL ADMIN:
-   Cambia SOLO el valor de ADMIN_PASSWORD.
-   La contraseña NO se cambia desde el panel.
 ============================================================ */
 
-const ADMIN_PASSWORD = "1234";
+const ADMIN_PASSWORD = "Hhttpqrreuzu1.";
 
 /* ============================================================
    ⚙️ CONFIGURACIÓN GENERAL
@@ -269,7 +263,7 @@ window.addBundle = function () {
 
 /* ============================================================
    📱 WHATSAPP — ÚNICO MÉTODO PARA ENVIAR EL PEDIDO
-   Número configurado: 0981101365
+   Número configurado: ...
 ============================================================ */
 
 window.sendWhatsApp = function () {
@@ -668,9 +662,8 @@ function keynovaBuildAdminPanel() {
                 <button class="kn-admin-primary" onclick="knAdminLogin()">Entrar al panel →</button>
 
                 <small>
-                    🔐 La contraseña NO se cambia aquí.<br>
-                    Para cambiarla, edita <code>ADMIN_PASSWORD</code> al principio de <code>enhancements.js</code>.
-                </small>
+                    🔐 
+                    
             </div>
 
             <div id="knAdminDashboard" class="kn-admin-dashboard" hidden>
