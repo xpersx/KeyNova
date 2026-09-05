@@ -512,3 +512,7 @@
     .kn-session-row { flex-wrap: wrap; }
     .kn-session-row > div { min-width: 170px; }
 }
+    .kn-form-grid .full, .kn-price-row > div { grid-column: auto; }
+    .kn-session-row { flex-wrap: wrap; }
+    .kn-session-row > div { min-width: 170px; }
+}
