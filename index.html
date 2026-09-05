@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Licencias digitales a precios especiales.">
+    <title>KeyNova | Licencias Digitales</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="#inicio" class="logo">
+        <div class="logo-icon">K</div>
+
+        <div class="logo-text">
+            <strong>KeyNova</strong>
+            <span>LICENCIAS DIGITALES</span>
+        </div>
+    </a>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#resenas">Reseñas</a>
+    </nav>
+
+    <button class="cart-button" onclick="openCart()">
+        <span>🛒</span>
+        <span>Carrito</span>
+        <b id="cartCount">0</b>
+    </button>
+
+</header>
+
+
+<main>
+
+<!-- ================= HERO ================= -->
+
+<section id="inicio" class="hero">
+
+    <div class="hero-background"></div>
+
+    <div class="hero-content">
+
+        <div class="offer-badge">
+            <span class="pulse"></span>
+            OFERTAS LIMITADAS
+        </div>
+
+        <h1>
+            Tus licencias.
+            <br>
+            <span>Más simples. Más baratas.</span>
+        </h1>
+
+        <p>
+            Compra licencias digitales a precios especiales
+            y disfruta de una experiencia rápida y sencilla.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#tienda" class="primary-button">
+                Ver ofertas
+                <span>→</span>
+            </a>
+
+            <a href="#resenas" class="secondary-button">
+                ⭐ Opiniones
+            </a>
+
+        </div>
+
+        <div class="trust-items">
+
+            <div>
+                <strong>⚡</strong>
+                <span>Proceso rápido</span>
+            </div>
+
+            <div>
+                <strong>🔒</strong>
+                <span>Compra segura</span>
+            </div>
+
+            <div>
+                <strong>💬</strong>
+                <span>Atención directa</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-visual">
+
+        <div class="glow"></div>
+
+        <div class="floating-price windows-float">
+            <div class="mini-icon windows-icon">⊞</div>
+            <div>
+                <small>Windows</small>
+                <strong>$2.99</strong>
+            </div>
+        </div>
+
+        <div class="monitor">
+
+            <div class="monitor-screen">
+
+                <div class="screen-content">
+
+                    <div class="windows-symbol">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+
+                    <span>KEYNOVA</span>
+
+                </div>
+
+            </div>
+
+            <div class="monitor-neck"></div>
+            <div class="monitor-base"></div>
+
+        </div>
+
+        <div class="floating-price office-float">
+            <div class="mini-icon office-icon">O</div>
+            <div>
+                <small>Office</small>
+                <strong>$2.99</strong>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BENEFITS ================= -->
+
+<section class="benefits">
+
+    <div class="benefit-card">
+        <div class="benefit-icon">⚡</div>
+        <div>
+            <h3>Rápido</h3>
+            <p>Proceso sencillo y directo.</p>
+        </div>
+    </div>
+
+    <div class="benefit-card">
+        <div class="benefit-icon">💎</div>
+        <div>
+            <h3>Precios especiales</h3>
+            <p>Ofertas disponibles por tiempo limitado.</p>
+        </div>
+    </div>
+
+    <div class="benefit-card">
+        <div class="benefit-icon">🛡️</div>
+        <div>
+            <h3>Experiencia segura</h3>
+            <p>Protegemos tus datos durante el proceso.</p>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ================= TIENDA ================= -->
+
+<section id="tienda" class="store-section">
+
+    <div class="section-title">
+
+        <span>◆ NUESTRA TIENDA</span>
+
+        <h2>
+            Elige tu
+            <strong>oferta</strong>
+        </h2>
+
+        <p>
+            Precios claros. Sin complicaciones.
+        </p>
+
+    </div>
+
+
+    <div class="products-grid">
+
+        <!-- WINDOWS -->
+
+        <article class="product-card">
+
+            <div class="product-top">
+
+                <div class="product-icon windows-icon">
+                    ⊞
+                </div>
+
+                <div class="discount">
+                    -50%
+                </div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-label">
+                    WINDOWS
+                </div>
+
+                <h3>Windows</h3>
+
+                <p>
+                    Licencia digital para Windows.
+                </p>
+
+                <div class="price-area">
+
+                    <span class="old-price">$6.00</span>
+
+                    <div class="current-price">
+                        <small>$</small>2.99
+                    </div>
+
+                </div>
+
+                <div class="saving">
+                    Ahorras $3.01
+                </div>
+
+                <button
+                    class="product-button"
+                    onclick="addToCart('Windows', 2.99)"
+                >
+                    Añadir al carrito
+                    <span>+</span>
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- OFFICE -->
+
+        <article class="product-card">
+
+            <div class="product-top">
+
+                <div class="product-icon office-icon">
+                    O
+                </div>
+
+                <div class="discount">
+                    -50%
+                </div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-label">
+                    MICROSOFT OFFICE
+                </div>
+
+                <h3>Office</h3>
+
+                <p>
+                    Licencia digital para Microsoft Office.
+                </p>
+
+                <div class="price-area">
+
+                    <span class="old-price">$6.00</span>
+
+                    <div class="current-price">
+                        <small>$</small>2.99
+                    </div>
+
+                </div>
+
+                <div class="saving">
+                    Ahorras $3.01
+                </div>
+
+                <button
+                    class="product-button"
+                    onclick="addToCart('Microsoft Office', 2.99)"
+                >
+                    Añadir al carrito
+                    <span>+</span>
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PACK ================= -->
+
+<section class="bundle-section">
+
+    <div class="bundle-content">
+
+        <div class="bundle-badge">
+            🔥 OFERTA ESPECIAL
+        </div>
+
+        <h2>
+            Windows + Office
+        </h2>
+
+        <p>
+            Lleva ambos productos juntos por un precio especial.
+        </p>
+
+        <div class="bundle-price">
+
+            <span>$6.00</span>
+
+            <strong>
+                <small>$</small>3.99
+            </strong>
+
+        </div>
+
+        <div class="bundle-saving">
+            Ahorras $2.01
+        </div>
+
+        <button onclick="addBundle()" class="bundle-button">
+            Quiero el pack
+            <span>→</span>
+        </button>
+
+    </div>
+
+    <div class="bundle-visual">
+
+        <div class="bundle-product windows-bundle">
+            ⊞
+        </div>
+
+        <div class="plus">+</div>
+
+        <div class="bundle-product office-bundle">
+            O
+        </div>
+
+        <div class="bundle-circle">
+            3.99
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RESEÑAS ================= -->
+
+<section id="resenas" class="reviews-section">
+
+    <div class="section-title">
+
+        <span>◆ RESEÑAS</span>
+
+        <h2>
+            Opiniones de
+            <strong>clientes</strong>
+        </h2>
+
+        <p>
+            Las experiencias de nuestra comunidad.
+        </p>
+
+    </div>
+
+
+    <div class="rating-box">
+
+        <div class="rating-main">
+
+            <strong id="averageRating">5.0</strong>
+
+            <div class="big-stars">
+                ★★★★★
+            </div>
+
+            <span id="reviewCount">
+                0 reseñas
+            </span>
+
+        </div>
+
+
+        <div class="rating-bars">
+
+            <div class="rating-row">
+                <span>5 ★</span>
+                <div class="bar">
+                    <i id="bar5"></i>
+                </div>
+            </div>
+
+            <div class="rating-row">
+                <span>4 ★</span>
+                <div class="bar">
+                    <i id="bar4"></i>
+                </div>
+            </div>
+
+            <div class="rating-row">
+                <span>3 ★</span>
+                <div class="bar">
+                    <i id="bar3"></i>
+                </div>
+            </div>
+
+            <div class="rating-row">
+                <span>2 ★</span>
+                <div class="bar">
+                    <i id="bar2"></i>
+                </div>
+            </div>
+
+            <div class="rating-row">
+                <span>1 ★</span>
+                <div class="bar">
+                    <i id="bar1"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="review-form">
+
+        <div class="review-form-header">
+
+            <div>
+                <h3>Déjanos tu opinión</h3>
+                <p>Tu comentario aparecerá de forma anónima.</p>
+            </div>
+
+            <span>👤 Anónimo</span>
+
+        </div>
+
+
+        <div class="stars-input" id="starsInput">
+
+            <button onclick="selectRating(1)">★</button>
+            <button onclick="selectRating(2)">★</button>
+            <button onclick="selectRating(3)">★</button>
+            <button onclick="selectRating(4)">★</button>
+            <button onclick="selectRating(5)">★</button>
+
+        </div>
+
+
+        <textarea
+            id="reviewText"
+            maxlength="300"
+            placeholder="Cuéntanos tu experiencia..."
+        ></textarea>
+
+
+        <div class="review-bottom">
+
+            <small>
+                Máximo 300 caracteres
+            </small>
+
+            <button
+                class="review-button"
+                onclick="submitReview()"
+            >
+                Publicar reseña
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="reviewsContainer"
+        class="reviews-container"
+    ></div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <div class="logo-icon">
+                K
+            </div>
+
+            <div>
+                <strong>KeyNova</strong>
+                <span>LICENCIAS DIGITALES</span>
+            </div>
+
+        </div>
+
+        <p>
+            © 2026 KeyNova. Todos los derechos reservados.
+        </p>
+
+        <button
+            class="admin-link"
+            onclick="openAdmin()"
+        >
+            ⚙ Panel administrativo
+        </button>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= CARRITO ================= -->
+
+<div
+    id="cartOverlay"
+    class="overlay"
+    onclick="closeCartOutside(event)"
+>
+
+    <div
+        class="modal cart-modal"
+        onclick="event.stopPropagation()"
+    >
+
+        <button
+            class="close-button"
+            onclick="closeCart()"
+        >
+            ×
+        </button>
+
+        <div class="modal-header">
+
+            <span class="modal-icon">
+                🛒
+            </span>
+
+            <div>
+                <h2>Tu carrito</h2>
+                <p>Revisa tus productos.</p>
+            </div>
+
+        </div>
+
+
+        <div id="cartItems" class="cart-items"></div>
+
+
+        <div class="cart-total">
+
+            <span>Total</span>
+
+            <strong id="cartTotal">
+                $0.00
+            </strong>
+
+        </div>
+
+
+        <button
+            class="checkout-button"
+            onclick="checkout()"
+        >
+            Continuar
+            <span>→</span>
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CHECKOUT ================= -->
+
+<div
+    id="checkoutOverlay"
+    class="overlay"
+    onclick="closeCheckoutOutside(event)"
+>
+
+    <div
+        class="modal checkout-modal"
+        onclick="event.stopPropagation()"
+    >
+
+        <button
+            class="close-button"
+            onclick="closeCheckout()"
+        >
+            ×
+        </button>
+
+        <div class="modal-header">
+
+            <span class="modal-icon">
+                📦
+            </span>
+
+            <div>
+                <h2>Finalizar pedido</h2>
+                <p>Selecciona cómo quieres continuar.</p>
+            </div>
+
+        </div>
+
+
+        <div
+            id="checkoutSummary"
+            class="checkout-summary"
+        ></div>
+
+
+        <button
+            class="whatsapp-button"
+            onclick="sendWhatsApp()"
+        >
+            <span>📱</span>
+            Continuar por WhatsApp
+        </button>
+
+
+        <button
+            class="discord-button"
+            onclick="sendOrder()"
+        >
+            <span>📩</span>
+            Enviar pedido
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= ADMIN ================= -->
+
+<div
+    id="adminOverlay"
+    class="overlay"
+    onclick="closeAdminOutside(event)"
+>
+
+    <div
+        class="modal admin-modal"
+        onclick="event.stopPropagation()"
+    >
+
+        <button
+            class="close-button"
+            onclick="closeAdmin()"
+        >
+            ×
+        </button>
+
+        <div class="modal-header">
+
+            <span class="modal-icon">
+                ⚙️
+            </span>
+
+            <div>
+                <h2>Administración</h2>
+                <p>Configura tu tienda.</p>
+            </div>
+
+        </div>
+
+
+        <label>
+            WhatsApp
+        </label>
+
+        <input
+            id="adminWhatsapp"
+            type="text"
+            placeholder="593999999999"
+        >
+
+        <small class="input-help">
+            Escribe el número con código de país.
+        </small>
+
+
+        <label>
+            Nombre de la tienda
+        </label>
+
+        <input
+            id="adminStoreName"
+            type="text"
+            placeholder="KeyNova"
+        >
+
+
+        <button
+            class="save-button"
+            onclick="saveAdmin()"
+        >
+            Guardar cambios
+        </button>
+
+
+        <div class="admin-danger">
+
+            <h3>Zona de administración</h3>
+
+            <button
+                class="danger-button"
+                onclick="clearReviews()"
+            >
+                Eliminar reseñas
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
