@@ -756,3 +756,77 @@ footer p { color: #7e867c; }
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+
+/* ============================================================
+   KEYNOVA — STRICT MONOCHROME OVERRIDE
+   Black, white and neutral grays only.
+============================================================ */
+:root {
+  color-scheme: dark;
+  --bg: #050505;
+  --bg-soft: #0a0a0a;
+  --card: #101010;
+  --card-light: #181818;
+  --blue: #ffffff;
+  --blue-light: #f0f0f0;
+  --blue-dark: #c8c8c8;
+  --text: #ffffff;
+  --muted: #a3a3a3;
+  --border: rgba(255,255,255,.14);
+  --green: #ffffff;
+  --yellow: #ffffff;
+  --radius: 16px;
+}
+html, body { background-color:#050505 !important; color:#fff !important; }
+body { background-image: radial-gradient(ellipse at 50% -20%,rgba(255,255,255,.055),transparent 48%),linear-gradient(#050505,#080808) !important; }
+.logo-icon { background:#000 !important; color:#fff !important; border:1px solid rgba(255,255,255,.18); box-shadow:none !important; }
+.keynova-logo-image { filter:none !important; }
+.offer-badge,.discount,.saving,.bundle-badge,.bundle-saving,
+.benefit-icon,.product-icon,.mini-icon,.kn-how-icon,.modal-icon,
+.bundle-product,.bundle-circle,.review-form-header > span {
+  background:#151515 !important; color:#fff !important; border-color:#333 !important;
+}
+.pulse,.windows-symbol i { background:#fff !important; box-shadow:none !important; }
+.hero h1 span,.section-title h2 strong,.product-label,.windows-icon,
+.product-info .current-price small,.bundle-price small,.kn-step,
+.kn-privacy-note strong,.rating-main > strong,.big-stars,.review-stars,
+.stars-input button.active,.product-button span { color:#fff !important; }
+.primary-button,.bundle-button,.checkout-button,.review-button,.save-button {
+  background:#fff !important; color:#050505 !important; border:1px solid #fff !important; box-shadow:none !important;
+}
+.secondary-button,.cart-button,.product-button {
+  background:#111 !important; color:#fff !important; border:1px solid #383838 !important;
+}
+.primary-button:hover,.bundle-button:hover,.checkout-button:hover,.review-button:hover,.save-button:hover {
+  background:#dedede !important; color:#000 !important;
+}
+.product-button:hover { background:#fff !important; color:#000 !important; border-color:#fff !important; }
+.product-button:hover span { color:#000 !important; }
+.whatsapp-button { background:#fff !important; color:#000 !important; filter:grayscale(1); }
+.benefit-card,.product-card,.bundle-section,.kn-how-card,.rating-box,.review-form,.review,
+.modal,.floating-price,.kn-service-summary > div {
+  background:linear-gradient(145deg,#151515,#0b0b0b) !important;
+  border-color:rgba(255,255,255,.13) !important; box-shadow:none;
+}
+.bundle-section { background:radial-gradient(ellipse at 83% 45%,rgba(255,255,255,.055),transparent 34%),linear-gradient(120deg,#171717,#0a0a0a) !important; }
+.kn-how-section { background:linear-gradient(180deg,#080808,#0d0d0d,#080808) !important; border-color:#222 !important; }
+.kn-privacy-note,.kn-payment-notice { background:#101010 !important; border-color:#333 !important; }
+.old-price,.legal-note,.section-title p,.hero p,.product-info p,.benefit-card p,
+.kn-how-card p,.review p,.kn-privacy-note p,.kn-payment-notice span,.kn-payment-notice small,
+.modal-header p,footer p { color:#a3a3a3 !important; }
+.bar { background:#292929 !important; }
+.bar i { background:#fff !important; }
+textarea,input { background:#080808 !important; color:#fff !important; border-color:#383838 !important; }
+textarea:focus,input:focus { border-color:#fff !important; box-shadow:0 0 0 2px rgba(255,255,255,.08) !important; }
+footer { background:#050505 !important; border-color:#222 !important; }
+.overlay { background:rgba(0,0,0,.82) !important; }
+.office-icon,.office-bundle { color:#fff !important; }
+.hero-background { background:radial-gradient(ellipse at 12% 45%,rgba(255,255,255,.055),transparent 34%),radial-gradient(ellipse at 83% 40%,rgba(255,255,255,.035),transparent 29%) !important; }
+.glow { background:rgba(255,255,255,.075) !important; }
+.screen-content { background:radial-gradient(circle at 50% 42%,#242424,#080808 72%) !important; }
+.monitor,.monitor-screen,.monitor-neck,.monitor-base { border-color:#333 !important; }
+.floating-price { border-color:#333 !important; }
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.01ms !important; }
+}
