@@ -54,14 +54,17 @@
 <div id="checkoutOverlay" class="overlay" onclick="closeCheckoutOutside(event)"><div class="modal checkout-modal" onclick="event.stopPropagation()"><button class="close-button" onclick="closeCheckout()" type="button" aria-label="Cerrar">×</button><div class="modal-header"><span class="modal-icon">◎</span><div><h2>Tu pedido</h2><p>Comprueba los detalles antes de continuar.</p></div></div><div id="checkoutSummary" class="checkout-summary"></div><div class="kn-payment-notice"><strong>Antes de confirmar</strong><span>Revisa el importe y acuerda las condiciones directamente con KeyNova.</span><small>El pago y la entrega se coordinan por WhatsApp.</small></div><button class="whatsapp-button" onclick="sendWhatsApp()" type="button">Continuar por WhatsApp ↗</button></div></div>
 <script src="script.js"></script>
 <script>
-/* KeyNova interactions: reduced, optional interface sound; no autoplay. */
+/* KeyNova interactions: intro gate, optional subtle sound and reveal effects. */
 (function(){
+ const welcome=document.getElementById("welcomeScreen");
+ const continueButton=document.getElementById("continueButton");
+ if(welcome && continueButton){continueButton.addEventListener("click",()=>{welcome.classList.add("welcome-exit");document.body.classList.add("site-entered");window.setTimeout(()=>{welcome.remove();document.getElementById("inicio")?.scrollIntoView({behavior:"smooth",block:"start"});},650);});}
  let soundOn=false, audio;
  function softTick(){
   if(!soundOn)return;
   try{audio=audio||new(window.AudioContext||window.webkitAudioContext)();if(audio.state==="suspended")audio.resume();const osc=audio.createOscillator(),gain=audio.createGain();osc.type="sine";osc.frequency.value=520;gain.gain.setValueAtTime(.0035,audio.currentTime);gain.gain.exponentialRampToValueAtTime(.0001,audio.currentTime+.075);osc.connect(gain);gain.connect(audio.destination);osc.start();osc.stop(audio.currentTime+.08);}catch(e){}
  }
- const toggle=document.createElement('button');toggle.className='sound-toggle';toggle.type='button';toggle.setAttribute('aria-pressed','false');toggle.innerHTML='<span class="sound-toggle-dot"></span> Sonido ambiental: apagado';toggle.addEventListener('click',()=>{soundOn=!soundOn;toggle.setAttribute('aria-pressed',String(soundOn));toggle.innerHTML='<span class="sound-toggle-dot"></span> Sonido suave: '+(soundOn?'activado':'apagado');if(soundOn)softTick();});
+ const toggle=document.createElement('button');toggle.className='sound-toggle';toggle.type='button';toggle.setAttribute('aria-pressed','false');toggle.innerHTML='<span class="sound-toggle-dot"></span> Sonido ambiental: apagado';toggle.addEventListener('click',()=>{soundOn=!soundOn;toggle.setAttribute('aria-pressed',String(soundOn));toggle.innerHTML='<span class="sound-toggle-dot"></span> Sonido ambiental: '+(soundOn?'activado':'apagado');if(soundOn)softTick();});
  document.body.appendChild(toggle);
  document.addEventListener('click',e=>{if(e.target.closest('a,button'))softTick();});
  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}}),{threshold:.12});
