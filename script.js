@@ -20,7 +20,7 @@ function addToCart(name,price){
 }
 function addBundle(){
     if(cart.some(item=>item.name==="Windows + Office")){showNotification("El pack ya está en tu carrito.");openCart();return;}
-    cart.push({name:"Windows + Office",price:3.99}); updateCart(); showNotification("Pack Windows + Office añadido ✓");
+    cart.push({name:"Windows + Office",price:25}); updateCart(); showNotification("Pack Windows + Office añadido ✓");
 }
 function removeItem(index){if(!Number.isInteger(index)||index<0||index>=cart.length)return;cart.splice(index,1);updateCart();}
 function updateCart(){
@@ -102,13 +102,21 @@ function updateRatingStats(reviews){
 
 /* ================= LOGO KEYNOVA ================= */
 function renderKeyNovaLogo(){
-    const svg=`<svg viewBox="0 0 64 64" aria-label="KeyNova" role="img" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="knLogoGradient" x1="8" y1="8" x2="56" y2="56"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs><rect x="4" y="4" width="56" height="56" rx="16" fill="#0b1422" stroke="rgba(96,165,250,.35)"/><path d="M19 17v30M19 32l22-15M19 32l22 15" fill="none" stroke="url(#knLogoGradient)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M44 18v28" stroke="#dbeafe" stroke-width="5" stroke-linecap="round" opacity=".9"/></svg>`;
-    document.querySelectorAll(".logo-icon").forEach(el=>{el.innerHTML=svg;el.classList.add("kn-logo-modern");});
+    /* Keep the user-provided asset at assets/Keynovalogo.png intact. */
+    document.querySelectorAll(".logo-icon").forEach(el=>{
+        if(!el.querySelector("img.keynova-logo-image")){
+            const img=document.createElement("img");
+            img.className="keynova-logo-image";
+            img.src="assets/Keynovalogo.png";
+            img.alt="KeyNova";
+            el.replaceChildren(img);
+        }
+    });
 }
 
 function showNotification(message){
     document.querySelector(".toast-notification")?.remove();const toast=document.createElement("div");toast.className="toast-notification";toast.textContent=message;
-    Object.assign(toast.style,{position:"fixed",bottom:"25px",right:"25px",zIndex:"9999",padding:"13px 18px",background:"#111c2d",border:"1px solid rgba(96,165,250,.25)",color:"white",borderRadius:"11px",fontSize:"11px",fontWeight:"700",boxShadow:"0 15px 40px rgba(0,0,0,.35)",animation:"toastIn .25s ease"});document.body.appendChild(toast);
+    Object.assign(toast.style,{position:"fixed",bottom:"25px",right:"25px",zIndex:"9999",padding:"13px 18px",background:"#292a25",border:"1px solid #55564d",color:"white",borderRadius:"11px",fontSize:"11px",fontWeight:"700",boxShadow:"0 15px 40px rgba(0,0,0,.35)",animation:"toastIn .25s ease"});document.body.appendChild(toast);
     setTimeout(()=>{toast.style.opacity="0";toast.style.transform="translateY(10px)";toast.style.transition=".25s";setTimeout(()=>toast.remove(),250);},2500);
 }
 const toastStyle=document.createElement("style");toastStyle.textContent=`@keyframes toastIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.kn-logo-modern{display:grid!important;place-items:center!important}.kn-logo-modern svg{width:100%;height:100%;display:block}.kn-logo-modern:after{display:none!important}`;document.head.appendChild(toastStyle);
