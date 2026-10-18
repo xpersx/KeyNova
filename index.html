@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="KeyNova — servicios digitales con precios claros y una experiencia sencilla.">
-<meta name="theme-color" content="#f4f1eb"><title>KeyNova — Tecnología, más sencilla</title>
+<meta name="theme-color" content="#f1eee8"><title>KeyNova — Tu mundo digital, en orden</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="enhancements.css">
 </head>
 <body>
+<div class="kn-welcome" id="welcomeScreen" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle"><div class="welcome-grain"></div><div class="welcome-top"><a href="#welcomeTitle" class="welcome-brand" aria-label="KeyNova"><span class="welcome-mark">K<span>.</span></span><span>KEYNOVA<small>TECNOLOGÍA SIN VUELTAS</small></span></a><span class="welcome-edition">EDICIÓN DIGITAL · 2026</span></div><div class="welcome-center"><span class="welcome-kicker"><i></i> BIENVENIDO A OTRO MODO DE HACERLO</span><h1 id="welcomeTitle">Tu mundo digital,<br><em>en orden.</em></h1><p>Herramientas útiles, precios claros y una experiencia que va al grano. Entra, explora y elige lo que necesitas.</p><button class="welcome-continue" id="continueButton" type="button"><span>Continuar a KeyNova</span><b>↗</b></button><span class="welcome-microcopy">SIN PRISAS. SIN COMPLICACIONES.</span></div><div class="welcome-bottom"><span>DISEÑADO PARA PERSONAS REALES</span><span>DESLIZA MENOS. RESUELVE MÁS.</span><span>01 / 01</span></div><div class="welcome-orbit orbit-one"></div><div class="welcome-orbit orbit-two"></div><div class="welcome-tile tile-one"><span>WINDOWS</span><strong>01</strong></div><div class="welcome-tile tile-two"><span>OFFICE</span><strong>02</strong></div></div>
 <header class="navbar">
  <a href="#inicio" class="logo" aria-label="KeyNova, ir al inicio"><div class="logo-icon"><img class="keynova-logo-image" src="assets/Keynovalogo.png" alt="KeyNova"></div><div class="logo-text"><strong>keynova<span class="brand-period">.</span></strong><span>TECNOLOGÍA SIN VUELTAS</span></div></a>
  <nav aria-label="Navegación principal"><a href="#tienda">Tienda</a><a href="#ventajas">Por qué KeyNova</a><a href="#como-funciona">Cómo funciona</a><a href="#resenas">Opiniones</a></nav>
@@ -58,9 +59,9 @@
  let soundOn=false, audio;
  function softTick(){
   if(!soundOn)return;
-  try{audio=audio||new(window.AudioContext||window.webkitAudioContext)();if(audio.state==="suspended")audio.resume();const osc=audio.createOscillator(),gain=audio.createGain();osc.type="sine";osc.frequency.value=520;gain.gain.setValueAtTime(.012,audio.currentTime);gain.gain.exponentialRampToValueAtTime(.0001,audio.currentTime+.075);osc.connect(gain);gain.connect(audio.destination);osc.start();osc.stop(audio.currentTime+.08);}catch(e){}
+  try{audio=audio||new(window.AudioContext||window.webkitAudioContext)();if(audio.state==="suspended")audio.resume();const osc=audio.createOscillator(),gain=audio.createGain();osc.type="sine";osc.frequency.value=520;gain.gain.setValueAtTime(.0035,audio.currentTime);gain.gain.exponentialRampToValueAtTime(.0001,audio.currentTime+.075);osc.connect(gain);gain.connect(audio.destination);osc.start();osc.stop(audio.currentTime+.08);}catch(e){}
  }
- const toggle=document.createElement('button');toggle.className='sound-toggle';toggle.type='button';toggle.setAttribute('aria-pressed','false');toggle.innerHTML='<span class="sound-toggle-dot"></span> Sonido suave: apagado';toggle.addEventListener('click',()=>{soundOn=!soundOn;toggle.setAttribute('aria-pressed',String(soundOn));toggle.innerHTML='<span class="sound-toggle-dot"></span> Sonido suave: '+(soundOn?'activado':'apagado');if(soundOn)softTick();});
+ const toggle=document.createElement('button');toggle.className='sound-toggle';toggle.type='button';toggle.setAttribute('aria-pressed','false');toggle.innerHTML='<span class="sound-toggle-dot"></span> Sonido ambiental: apagado';toggle.addEventListener('click',()=>{soundOn=!soundOn;toggle.setAttribute('aria-pressed',String(soundOn));toggle.innerHTML='<span class="sound-toggle-dot"></span> Sonido suave: '+(soundOn?'activado':'apagado');if(soundOn)softTick();});
  document.body.appendChild(toggle);
  document.addEventListener('click',e=>{if(e.target.closest('a,button'))softTick();});
  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}}),{threshold:.12});
