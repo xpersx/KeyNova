@@ -953,3 +953,61 @@ footer p,.legal-note{color:#888}
 @media(max-width:700px){.navbar{height:72px;padding:0 16px}.logo-icon{width:46px;height:46px;min-width:46px}.logo-text strong{font-size:15px}.logo-text span{font-size:7px;letter-spacing:1.3px}nav{gap:13px}nav a{font-size:11px}.cart-button{padding:9px 10px}.hero{padding:65px 22px 48px;min-height:auto;flex-direction:column;align-items:flex-start}.hero h1{font-size:clamp(40px,10vw,58px)}.hero-visual{align-self:center;width:100%;max-width:430px;min-width:0;height:340px;transform:scale(.9);margin:-5px 0 -15px}.benefits{grid-template-columns:1fr;padding:0 20px 55px}.store-section,.reviews-section{padding:70px 20px}.section-title h2{font-size:33px}.products-grid{grid-template-columns:1fr}.bundle-section{margin:10px 18px 55px;padding:30px 22px}.kn-how-section{padding:70px 20px}.kn-how-grid{grid-template-columns:1fr 1fr}.footer-inner{gap:18px}}
 @media(max-width:480px){.logo-text span{display:none}nav{gap:10px}nav a{font-size:10px}.cart-button span:nth-child(2){display:none}.kn-how-grid{grid-template-columns:1fr}.hero-buttons{flex-wrap:wrap}.trust-items{gap:12px 18px}.hero-visual{transform:scale(.8);margin:-25px 0 -35px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+/* KEYNOVA WELCOME GATE — editorial monochrome intro */
+body:not(.site-entered){overflow:hidden!important}
+.welcome-screen{
+ position:fixed;inset:0;z-index:99999;min-height:100svh;overflow:hidden;
+ display:flex;flex-direction:column;justify-content:space-between;
+ padding:clamp(24px,5vw,64px) clamp(22px,7.5vw,110px);
+ color:#f5f5f5;background:#080808;
+ font-family:Inter,Arial,sans-serif;isolation:isolate;
+}
+.welcome-screen:before{
+ content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;
+ background:radial-gradient(ellipse at 76% 44%,rgba(255,255,255,.075),transparent 35%),linear-gradient(125deg,#080808 10%,#101010 58%,#070707);
+}
+.welcome-grain{
+ position:absolute;inset:0;z-index:-1;opacity:.15;pointer-events:none;
+ background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+}
+.welcome-top,.welcome-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.welcome-wordmark{font-size:17px;font-weight:900;letter-spacing:2.5px}
+.welcome-dot{color:#999}
+.welcome-edition,.welcome-bottom{font-size:9px;font-weight:600;letter-spacing:1.8px;color:#888}
+.welcome-main{position:relative;width:min(780px,100%);margin:auto 0;padding:70px 0 85px;animation:welcomeRise .8s cubic-bezier(.2,.75,.25,1) both}
+.welcome-eyebrow{display:flex;align-items:center;gap:12px;color:#c8c8c8;font-size:10px;letter-spacing:2.4px;font-weight:700}
+.welcome-line{width:32px;height:1px;background:#f5f5f5}
+.welcome-main h1{margin:28px 0 22px;font-size:clamp(54px,9.3vw,120px);font-weight:800;line-height:.91;letter-spacing:-.085em}
+.welcome-main h1 span{color:#8e8e8e}
+.welcome-main p{max-width:440px;color:#a8a8a8;font-size:clamp(14px,1.4vw,17px);line-height:1.9}
+.welcome-continue{
+ display:inline-flex;align-items:center;justify-content:space-between;gap:48px;
+ min-width:190px;margin-top:34px;padding:17px 21px;border:1px solid #f2f2f2;
+ border-radius:3px;background:#f2f2f2;color:#080808;font:700 12px Inter,Arial,sans-serif;
+ cursor:pointer;transition:background .25s ease,color .25s ease,transform .25s ease,border-color .25s ease;
+}
+.welcome-continue span{font-size:18px;transition:transform .25s ease}
+.welcome-continue:hover{background:transparent;color:#fff;transform:translateY(-3px)}
+.welcome-continue:hover span{transform:translate(3px,-3px)}
+.welcome-continue:focus-visible{outline:2px solid #fff;outline-offset:5px}
+.welcome-footnote{display:flex;align-items:center;gap:10px;margin-top:38px;color:#777;font-size:9px;letter-spacing:1.7px}
+.welcome-status{width:6px;height:6px;border-radius:50%;background:#eee;box-shadow:0 0 0 4px #222}
+.welcome-side-note{position:absolute;right:7.5%;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;color:#555;font-size:10px;letter-spacing:5px}
+.welcome-bottom{padding-top:20px;border-top:1px solid #292929}
+.welcome-exit{animation:welcomeOut .42s ease forwards;pointer-events:none}
+@keyframes welcomeRise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes welcomeOut{to{opacity:0;transform:scale(1.015);visibility:hidden}}
+@media(max-width:650px){
+ .welcome-screen{padding:25px 23px 22px}
+ .welcome-edition{font-size:8px;letter-spacing:1px;text-align:right}
+ .welcome-wordmark{font-size:14px;letter-spacing:2px}
+ .welcome-main{padding:50px 0}
+ .welcome-main h1{font-size:clamp(53px,13vw,82px)}
+ .welcome-main p{max-width:340px;font-size:14px}
+ .welcome-side-note{right:22px;top:35%;font-size:8px}
+ .welcome-bottom{font-size:7px;letter-spacing:1px}
+ .welcome-bottom span:nth-child(2){display:none}
+}
+@media(prefers-reduced-motion:reduce){.welcome-main{animation:none}.welcome-exit{animation-duration:.01ms}}
