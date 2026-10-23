@@ -116,4 +116,4 @@ function showNotification(message){
 }
 const toastStyle=document.createElement("style");toastStyle.textContent=`@keyframes toastIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.kn-logo-modern{display:grid!important;place-items:center!important}.kn-logo-modern svg{width:100%;height:100%;display:block}.kn-logo-modern:after{display:none!important}`;document.head.appendChild(toastStyle);
 document.addEventListener("keydown",event=>{if(event.key==="Escape"){closeCart();closeCheckout();}});
-document.addEventListener("DOMContentLoaded",()=>{updateCart();selectRating(5);renderKeyNovaLogo();renderReviews();});
+document.addEventListener("DOMContentLoaded",()=>{updateCart();renderKeyNovaLogo();});
