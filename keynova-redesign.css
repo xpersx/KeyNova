@@ -23,3 +23,37 @@ button:focus-visible,a:focus-visible,textarea:focus-visible{outline:2px solid #a
 @media(max-width:760px){.navbar{height:72px;padding-inline:5%}.logo-icon{width:42px;height:42px;flex-basis:42px}nav{gap:14px}nav a{font-size:11px}.cart-button{padding:9px 10px;gap:6px}.hero{min-height:auto;padding:70px 6% 50px;flex-direction:column;align-items:flex-start}.hero-content{max-width:100%}.hero h1{font-size:clamp(42px,10vw,62px);letter-spacing:-2.5px}.hero p{font-size:14px}.hero-visual{align-self:center;width:100%;min-width:0;max-width:450px;height:340px;transform:none;margin-top:10px}.monitor{width:min(310px,75vw)}.monitor-screen{height:195px}.benefits{margin:0 auto 20px;grid-template-columns:1fr}.benefit-card{padding:17px}.store-section,.reviews-section,.kn-how-section{padding:75px 6%}.products-grid{grid-template-columns:1fr;max-width:480px}.product-info{padding:19px 21px 22px}.product-top{padding:21px 21px 0}.bundle-section{width:88%;margin:10px auto 35px;padding:28px 23px;flex-direction:column}.bundle-visual{min-width:0;width:100%;min-height:220px}.bundle-price strong{font-size:42px}.section-title{margin-bottom:29px}.review-form{padding:19px}.review-form-header{gap:12px}.review-form-header>span{display:none}.review-bottom{gap:12px;flex-wrap:wrap}.review-button{width:100%}footer{padding:27px 6%}}
 @media(max-width:480px){.navbar{padding-inline:4%;gap:8px}.logo{gap:8px}.logo-icon{width:37px;height:37px;flex-basis:37px;border-radius:12px}.logo-text strong{font-size:14px}.logo-text span{font-size:6.5px;letter-spacing:1.15px}nav{gap:10px}nav a{font-size:10px}nav a:nth-child(3),nav a:nth-child(4){display:none}.cart-button{padding:8px;font-size:10px}.cart-button>span:first-child{display:none}.hero{padding-top:58px}.hero h1{font-size:clamp(37px,10vw,48px);letter-spacing:-2px}.hero-buttons{width:100%}.primary-button,.secondary-button{flex:1;padding-inline:12px;font-size:11px}.trust-items{gap:12px}.trust-items div{font-size:9px}.hero-visual{height:285px}.monitor-screen{height:170px}.windows-float{left:-2px}.office-float{right:-2px}.floating-price{padding:10px;gap:8px}.floating-price strong{font-size:13px}.floating-price small{font-size:9px}.store-section,.reviews-section,.kn-how-section{padding:65px 5%}.section-title h2{letter-spacing:-1.2px}.product-card{border-radius:19px}.bundle-section{width:92%;border-radius:22px}.bundle-price{gap:10px;flex-wrap:wrap}.bundle-price>span{width:100%}.bundle-visual{transform:scale(.9)}.rating-box{padding:17px}.rating-bars{min-width:130px}.review-form{padding:16px}.footer-inner{gap:15px;align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* KeyNova: slate blue theme and landing/shop switch */
+:root{--bg:#263449;--bg-soft:#304158;--card:#35475e;--card-light:#3b4f68;--blue:#82a9ec;--blue-light:#c4dcff;--blue-dark:#527dc4;--text:#f4f7fc;--muted:#c1ccdc;--border:rgba(210,226,248,.2)}
+body{color:#f4f7fc;background:radial-gradient(ellipse at 48% -12%,#718dbb55,transparent 48%),linear-gradient(140deg,#263449,#304158 48%,#233044)}
+body:before{opacity:.12;background-image:linear-gradient(#dbeafe12 1px,transparent 1px),linear-gradient(90deg,#dbeafe12 1px,transparent 1px)}
+.navbar{background:#263449ed;border-bottom-color:#d6e4fa22}.logo-icon{background:#3b506b;border-color:#c0d8ff55}
+.hero-background{background:radial-gradient(ellipse at 12% 40%,#7198d52c,transparent 37%),radial-gradient(ellipse at 80% 43%,#8aaeea20,transparent 33%)}
+.offer-badge{background:#91b9f51a;border-color:#b6d2ff3c;color:#d7e6ff}.pulse{background:#a8caff;box-shadow:0 0 0 5px #a8caff1a,0 0 16px #a8caff66}
+.hero p,.product-info p,.bundle-content p,.benefit-card p,.kn-how-card p,.section-title p{color:#c1ccdc}
+.primary-button,.product-button,.bundle-button,.checkout-button,.review-button{background:linear-gradient(115deg,#648bd3,#7189d7);box-shadow:0 9px 25px #17284435}
+.primary-button:hover,.product-button:hover,.bundle-button:hover,.checkout-button:hover{background:linear-gradient(115deg,#7ba3eb,#879af0)}
+.secondary-button,.cart-button{background:#3b4d64;border-color:#c4d8f04a;color:#eaf2ff}
+.benefit-card,.product-card,.kn-how-card,.rating-box,.review-form,.review{background:linear-gradient(145deg,#3a4d65,#2d3d53);border-color:#d4e3f72b;box-shadow:0 18px 45px #17233826}
+.section-title>span,.product-label,.kn-step{color:#c1d9ff}.section-title h2,.product-info h3,.bundle-content h2{color:#f6f8fd}
+.section-title h2 strong{background:linear-gradient(100deg,#c5dcff,#b4bcff);background-clip:text;-webkit-background-clip:text}
+.product-card:hover,.benefit-card:hover,.kn-how-card:hover,.review:hover{border-color:#c5dcff72}
+.product-icon,.benefit-icon{background:#8bb5f51b;border-color:#b5d0ff3b}.discount{background:#a7c9ff1c;border-color:#bdd6ff4d;color:#dceaff}
+.old-price{display:inline-block;color:#b9c5d7;text-decoration:line-through;font-size:16px;font-weight:700;margin-right:10px}
+.price-area{display:flex;align-items:baseline;flex-wrap:wrap;gap:3px 8px}.saving{color:#d0e0f8;font-size:11px}
+.bundle-section{background:radial-gradient(ellipse at 80% 45%,#90b5ff29,transparent 43%),linear-gradient(125deg,#405571,#2d3d53 72%);border-color:#c2d8ff4a}
+.bundle-badge{color:#e0ecff;background:#b5d0ff18;border-color:#c5dcff4a}.bundle-price strong{color:#fff}.bundle-price>span{color:#c1ccdc}.bundle-saving{color:#d5e6ff}
+.bundle-product{background:linear-gradient(140deg,#4a6180,#34445e);border-color:#d0e1ff3a}.bundle-circle{background:linear-gradient(140deg,#48668c,#4b527f);border-color:#c6dcff8a}
+.kn-how-section{background:linear-gradient(180deg,#24324722,#263449cc,#24324722)}
+.kn-service-summary,.kn-privacy-note{background:#3a4d65;border-color:#c7d9f32d}.kn-service-summary small,.kn-privacy-note p{color:#c1ccdc}.kn-service-summary strong{color:#f4f7fc}
+.big-stars,.review-stars,.stars-input button.active{color:#c6dcff}.bar{background:#d9e6fa2b}.bar i{background:linear-gradient(90deg,#739de7,#c3d8ff)}
+#reviewText{color:#f4f7fc;background:#2a3a50;border-color:#c5d7f033}#reviewText::placeholder{color:#b9c5d7}
+footer{background:#222f42;border-top-color:#c7d9f322}footer p,.legal-note{color:#b9c5d7}
+.overlay{background:#182333cc}.modal{background:linear-gradient(145deg,#3a4d65,#29394e);border-color:#c7d9f34a}.modal-header h2,.cart-total strong,.cart-item-price strong{color:#f4f7fc}.modal-header p,.cart-item-info small,.remove-item{color:#c1ccdc}.cart-item{background:#2a3a50;border-color:#c7d9f32d}.cart-total{border-top-color:#c7d9f32d}.checkout-summary{background:#2a3a50;color:#eaf1fc;border-color:#c7d9f32d}
+.back-home-button{display:inline-flex;align-items:center;gap:8px;margin:0 0 28px;padding:11px 15px;border:1px solid #c5dcff4a;border-radius:12px;background:#3a4d65;color:#eaf2ff;font:700 12px Inter,sans-serif;cursor:pointer}
+body:not(.shopping-mode) .store-section,body:not(.shopping-mode) .bundle-section{display:none!important}
+body.shopping-mode .hero,body.shopping-mode .benefits,body.shopping-mode .kn-how-section,body.shopping-mode .reviews-section{display:none!important}
+body.shopping-mode .store-section{display:block!important;min-height:calc(100vh - 82px)}
+body.shopping-mode .bundle-section{display:flex!important}
+@media(max-width:760px){body.shopping-mode .store-section{min-height:calc(100vh - 72px)}.back-home-button{margin-bottom:22px}}
