@@ -20,7 +20,7 @@ function addToCart(name,price){
 }
 function addBundle(){
     if(cart.some(item=>item.name==="Windows + Office")){showNotification("El pack ya está en tu carrito.");openCart();return;}
-    cart.push({name:"Windows + Office",price:25.00}); updateCart(); showNotification("Pack Windows + Office añadido ✓");
+    cart.push({name:"Windows + Office",price:23.99}); updateCart(); showNotification("Pack Windows + Office añadido ✓");
 }
 function removeItem(index){if(!Number.isInteger(index)||index<0||index>=cart.length)return;cart.splice(index,1);updateCart();}
 function updateCart(){
@@ -32,6 +32,9 @@ function updateCart(){
     container.innerHTML=cart.map((item,index)=>{total+=Number(item.price);return `<div class="cart-item"><div class="cart-item-info"><strong>${escapeHTML(item.name)}</strong><small>Producto digital</small></div><div class="cart-item-price"><strong>$${money(item.price)}</strong><button class="remove-item" type="button" onclick="removeItem(${index})">Eliminar</button></div></div>`;}).join("");
     totalElement.textContent=`$${money(total)}`;
 }
+function enterStore(){document.body.classList.add("shopping-mode");window.scrollTo({top:0,behavior:"smooth"});}
+function showLanding(){document.body.classList.remove("shopping-mode");window.scrollTo({top:0,behavior:"smooth"});}
+
 function openCart(){document.getElementById("cartOverlay")?.classList.add("show");document.body.style.overflow="hidden";}
 function closeCart(){document.getElementById("cartOverlay")?.classList.remove("show");document.body.style.overflow="";}
 function closeCartOutside(event){if(event.target?.id==="cartOverlay")closeCart();}
