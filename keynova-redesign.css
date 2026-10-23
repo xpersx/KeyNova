@@ -184,3 +184,8 @@ body.shopping-mode .bundle-section{display:flex!important}
  .bundle-visual{transform:scale(.9)}.section-title h2{letter-spacing:-1px}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* Official monogram image */
+.logo-image{display:block;width:44px;height:44px;flex:0 0 44px;object-fit:contain;border-radius:9px;background:#000;border:1px solid rgba(220,234,255,.2)}
+.footer-brand .logo-image{width:42px;height:42px;flex-basis:42px}
+@media(max-width:700px){.logo-image{width:39px;height:39px;flex-basis:39px}}
